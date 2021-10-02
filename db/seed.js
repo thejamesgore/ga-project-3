@@ -1,5 +1,5 @@
-import Place from '../models/place.js'
-import { placesSeedData } from './placesSeedData.js'
+import Country from '../models/country.js'
+import { countrySeedData } from './countrySeedData.js'
 import { connectDb, truncateDb, disconnectDb } from './helpers.js'
 
 async function seedDatabase() {
@@ -10,8 +10,8 @@ try {
     await truncateDb()
     console.log(`🔥🔥🔥🔥 Database dropped 🔥🔥🔥🔥`)
 
-    const places = await Place.create(placesSeedData)
-    console.log(`🤖🤖🤖🤖 ${places.length} places added to the database🤖🤖🤖🤖`)
+    const country = await Country.create(countrySeedData)
+    console.log(`🤖🤖🤖🤖 ${country.length} countries added to the database🤖🤖🤖🤖`)
 } catch (err) {
     console.log(`🚨🚨🚨🚨 Something went wrong seeding the database`, err)
 }

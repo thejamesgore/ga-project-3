@@ -1,4 +1,4 @@
-import { mongoose } from "mongoose";
+import mongoose  from "mongoose";
 import mongooseUniqueValidator from "mongoose-Unique-Validator";
 
 const commentSchema = new mongoose.Schema({
@@ -8,7 +8,7 @@ const commentSchema = new mongoose.Schema({
   { timestamp: true },
 );
 
-const countriesSchema = new mongoose.schema({
+const countriesSchema = new mongoose.Schema({
   name: { type: String, required: true },
   city: {type: String, required: true},
   yearVisited: {type: Number, required: true},
