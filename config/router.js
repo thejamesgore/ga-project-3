@@ -1,13 +1,14 @@
 import express from 'express'
-import { getAllPlaces } from '../controllers/placesController.js'
+import { getAllCountries } from '../controllers/countriesController.js'
+
 
 // Router is reponsible for which routes are answered by which controllers
-const router = express.Router()
+const Router = express.Router()
 
 // base URL of this is determined by api
 // here we handle everything that comes after that base
-router.route('/places').get(getAllPlaces)
+Router.route('/countries').get(getAllCountries)
 
-export default router
+export default Router
 
 //update
