@@ -20,7 +20,8 @@
   "homepage": "https://github.com/thejamesgore/ga-project-3#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^6.0.8"
+    "mongoose": "^6.0.8",
+    "mongoose-unique-validator": "^2.0.3"
   },
   "type": "module"
 }
