@@ -1,4 +1,5 @@
 export const placesSeedData = [
+
   {
     Country: "United Kingdom",
     City: "London",
@@ -20,3 +21,5 @@ export const placesSeedData = [
 ];
 
 //update
+
+

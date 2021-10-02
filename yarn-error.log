@@ -1,13 +1,39 @@
 Arguments: 
+
+  /usr/local/Cellar/node/16.6.2/bin/node /usr/local/Cellar/yarn/1.22.11/libexec/bin/yarn.js add mongoose-Unique-Validator
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+
   /Users/jamesgore/.nvm/versions/node/v16.6.1/bin/node /Users/jamesgore/.nvm/versions/node/v16.6.1/bin/yarn start:server
 
 PATH: 
   /Users/jamesgore/.nvm/versions/node/v16.6.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jamesgore/.nvm/versions/node/v16.6.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin
 
+
 Yarn version: 
   1.22.11
 
 Node version: 
+
+  16.6.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/mongoose-Unique-Validator: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:66992:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:140763:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:141735:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:141657:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1331:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
   16.6.1
 
 Platform: 
@@ -21,6 +47,7 @@ Trace:
       at step (/Users/jamesgore/.nvm/versions/node/v16.6.1/lib/node_modules/yarn/lib/cli.js:310:30)
       at /Users/jamesgore/.nvm/versions/node/v16.6.1/lib/node_modules/yarn/lib/cli.js:321:13
 
+
 npm manifest: 
   {
     "name": "ga-project-3",
@@ -28,8 +55,12 @@ npm manifest:
     "description": "travel app",
     "main": "server.js",
     "scripts": {
+
+      "test": "echo \"Error: no test specified\" && exit 1"
+
       "start:server": "npx nodemon server.js",
       "seed": "node db/seed.js",
+
     },
     "repository": {
       "type": "git",
