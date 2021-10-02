@@ -49,7 +49,7 @@ async function deleteCountry(req, res, next) {
     }
 
     await country.remove()
-    return res.status(200).json(country).send({ message: `${country} was deleted`})
+    return res.status(200).send({ message: `${country} was deleted`})
     
   } catch (err) {
     next (err)
@@ -57,10 +57,22 @@ async function deleteCountry(req, res, next) {
 }
 
 //update country
+async function updateCountry(req, res, next) {
+  try {
+    const id = req.params.id
+    const country = await Country.findById(id)
 
+    if (!country) {
+      return res.status(404).send({ message: "Country does not exist"})
+    }
 
+    country.set(req.body)
+    const savedCountry = await country.save()
+    
+    return res.status(200).json(savedCountry)
+  } catch (err) {
+  next(err)
+}
+}
 
-
-
-export default { getAllCountries, getCountry, createCountry, deleteCountry }
-
+export default { getAllCountries, getCountry, createCountry, deleteCountry, updateCountry }

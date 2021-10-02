@@ -13,6 +13,7 @@ Router.route('/countries')
 Router.route('/countries/:id')
   .get(countriesController.getCountry)
   .delete(countriesController.deleteCountry)
+  .put(countriesController.updateCountry)
 
 export default Router
 
