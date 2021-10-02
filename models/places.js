@@ -11,3 +11,4 @@ const placeSchema = new mongoose.schema(
 const Place = mongoose.model('Place', placeSchema)
 
 export default Place
+//update

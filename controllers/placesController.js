@@ -1,5 +1,8 @@
-// How we get the movies (from database or otherwise)
+// How we get the places(from database or otherwise)
 // is the responsibility of the controller
-export const getAllMovies = (request, response) => {
-  return response.send(['Die Hard', 'Interstellar', 'Nomadland'])
+export const getAllPlaces = (request, response) => {
+  return response.send(['UK, America, Australia'])
 }
+
+
+//update
