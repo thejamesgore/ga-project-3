@@ -1,9 +1,13 @@
 import express from "express";
 import router from "./config/router.js";
-import { port } from "./config/enviroment.js";
 import { connectDb } from "./db/helpers.js";
+import dotenv from "dotenv";
+import cors from "cors";
+
+dotenv.config();
 
 const app = express();
+app.use(cors());
 
 // middleware
 // in between the request and our routing code (below),
@@ -16,7 +20,7 @@ async function startServer() {
   try {
     await connectDb();
     console.log("🤖 Mongoose is connected");
-    app.listen(port, () => console.log(`🤖 Listening on Port: ${port}`));
+    app.listen(process.env.PORT, () => console.log(`🤖 Listening on Port: ${process.env.PORT}`));
   } catch (err) {
     console.log("🤖 Oh no something went wrong", err);
   }
