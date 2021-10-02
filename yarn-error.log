@@ -1,13 +1,21 @@
 Arguments: 
+
   /usr/local/Cellar/node/16.6.2/bin/node /usr/local/Cellar/yarn/1.22.11/libexec/bin/yarn.js add mongoose-Unique-Validator
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
 
+  /Users/jamesgore/.nvm/versions/node/v16.6.1/bin/node /Users/jamesgore/.nvm/versions/node/v16.6.1/bin/yarn start:server
+
+PATH: 
+  /Users/jamesgore/.nvm/versions/node/v16.6.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/jamesgore/.nvm/versions/node/v16.6.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+
 Yarn version: 
   1.22.11
 
 Node version: 
+
   16.6.2
 
 Platform: 
@@ -26,6 +34,20 @@ Trace:
       at endReadableNT (node:internal/streams/readable:1331:12)
       at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
+  16.6.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/jamesgore/Coding/SEI/group-work/ga-project-3/package.json: Unexpected token } in JSON at position 197
+      at JSON.parse (<anonymous>)
+      at /Users/jamesgore/.nvm/versions/node/v16.6.1/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/Users/jamesgore/.nvm/versions/node/v16.6.1/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /Users/jamesgore/.nvm/versions/node/v16.6.1/lib/node_modules/yarn/lib/cli.js:321:13
+
+
 npm manifest: 
   {
     "name": "ga-project-3",
@@ -33,7 +55,12 @@ npm manifest:
     "description": "travel app",
     "main": "server.js",
     "scripts": {
+
       "test": "echo \"Error: no test specified\" && exit 1"
+
+      "start:server": "npx nodemon server.js",
+      "seed": "node db/seed.js",
+
     },
     "repository": {
       "type": "git",
