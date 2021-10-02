@@ -1,7 +1,7 @@
-import express from 'express';
-import router from './config/router.js';
-import { port } from './config/environment.js';
-import { connectDb } from './db/helpers.js';
+import express from "express";
+import router from "./config/router.js";
+import { port } from "./config/enviroment.js";
+import { connectDb } from "./db/helpers.js";
 
 const app = express();
 
@@ -10,18 +10,20 @@ const app = express();
 // this middleware is decoding JSON
 app.use(express.json());
 // using the router for /api/... requests
-app.use('/api', router);
+app.use("/api", router);
 
 async function startServer() {
   try {
     await connectDb();
-    console.log('🤖 Mongoose is connected');
+    console.log("🤖 Mongoose is connected");
     app.listen(port, () => console.log(`🤖 Listening on Port: ${port}`));
   } catch (err) {
-    console.log('🤖 Oh no something went wrong', err);
+    console.log("🤖 Oh no something went wrong", err);
   }
 }
 
-startServer()
+startServer();
 
 //update
+
+//ollys updated comments
