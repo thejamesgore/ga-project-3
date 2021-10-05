@@ -1,6 +1,9 @@
 import Country from '../models/country.js'
 import { countrySeedData } from './countrySeedData.js'
 import { connectDb, truncateDb, disconnectDb } from './helpers.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 async function seedDatabase() {
 try {

@@ -1,5 +1,5 @@
 import User from "../models/user.js";
-import Jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 //registerUser
 async function registerUser(req, res, next) {
@@ -24,7 +24,8 @@ async function loginUser(req, res, next) {
     if (!user.validatePassword(password)) {
       return res.status(401).send({ message: "Unauthorized" });
     }
-    const token = jwt.sign({ userId: user._id }, process.env.SECRET, {
+    const secret = "travel"
+    const token = jwt.sign({ userId: user._id }, secret, {
       expiresIn: "12h",
     });
     res.status(202).send({ token, message: "Login successful" });

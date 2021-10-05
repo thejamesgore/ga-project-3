@@ -1,10 +1,8 @@
 import mongoose from "mongoose";
 
-
-
 export function connectDb() {
   
-  return mongoose.connect("mongodb://localhost/travel-app");
+  return mongoose.connect(process.env.DB_URI)
 }
 
 // Deletes all contents of a database
