@@ -18,7 +18,7 @@ Router.route("/countries/:id")
 
 Router.route("/countries/:id/comments").post(commentsController.createComment);
 
-Router.route("/countries/:id/comments/commentId")
+Router.route("/countries/:id/comments/:commentId")
   .put(commentsController.updateComment)
   .delete(commentsController.deleteComment);
 export default Router;
