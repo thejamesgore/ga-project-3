@@ -1,19 +1,19 @@
 export const countrySeedData = [
   {
     name: "United Kingdom",
-    city: "London",
+    city: [],
     yearVisited: 2000,
     comments: [],
   },
   {
     name: "Australia",
-    city: "Sydney",
+    city: [],
     yearVisited: 2020,
     comments: [],
   },
   {
     name: "North America",
-    city: "New York",
+    city: [],
     yearVisited: 1999,
     comments: [],
   },

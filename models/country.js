@@ -10,7 +10,7 @@ const commentSchema = new mongoose.Schema({
 
 const countriesSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  city: {type: String, required: true},
+  city: [{ type: mongoose.Types.ObjectId, ref: 'Cities' }],
   yearVisited: {type: Number, required: true},
   comments: [commentSchema],
 });
