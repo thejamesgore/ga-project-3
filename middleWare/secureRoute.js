@@ -27,7 +27,7 @@ async function secureRoute(req, res, next) {
     
     console.log("The secret is ", secret);
     
-    jwt.verify(token, secret, async (err, data) => {
+    jwt.verify(token, process.env.secret, async (err, data) => {
       if (err) {
         return res.status(401).send({ message: "Unauthorized" });
       }
