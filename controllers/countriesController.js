@@ -5,6 +5,7 @@ import Country from "../models/country.js";
 async function getAllCountries(_req, res, next) {
   try {
     const countries = await Country.find()
+
     return res.status(200).json(countries)
   } catch (err) {
     next(err)

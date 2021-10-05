@@ -3,7 +3,7 @@ import mongooseUniqueValidator from "mongoose-Unique-Validator";
 
 const citiesSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  country: [{ type: mongoose.Types.ObjectId, ref: Country }],
+  country: [{ type: mongoose.Types.ObjectId, ref: 'Country' }],
 });
 
 citiesSchema.plugin(mongooseUniqueValidator);
