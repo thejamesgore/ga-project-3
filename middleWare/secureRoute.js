@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
-const secret = 'travel'
+const secret = "travel";
+import dotenv from "dotenv";
 
 //make sure that the user making the request has a valid token
 async function secureRoute(req, res, next) {
@@ -24,10 +25,9 @@ async function secureRoute(req, res, next) {
 
     //try to extract the data on the token using the secret. Also handles errors
 
-    
     console.log("The secret is ", secret);
-    
-    jwt.verify(token, process.env.secret, async (err, data) => {
+
+    jwt.verify(token, process.env.SECRET, async (err, data) => {
       if (err) {
         return res.status(401).send({ message: "Unauthorized" });
       }
@@ -48,9 +48,9 @@ async function secureRoute(req, res, next) {
       next();
     });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     return res.status(401).send({ message: "Unauthorized user!!" });
   }
 }
 
-export default secureRoute
+export default secureRoute;
