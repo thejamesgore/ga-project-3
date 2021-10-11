@@ -1,5 +1,7 @@
 import jwt from "jsonwebtoken";
-import User from "../models/user";
+import User from "../models/user.js";
+const secret = "travel";
+import dotenv from "dotenv";
 
 //make sure that the user making the request has a valid token
 async function secureRoute(req, res, next) {
@@ -8,10 +10,10 @@ async function secureRoute(req, res, next) {
     const authToken = req.headers.authorization;
 
     //if there is no token or the string doesnt start with Bearer, return anathorised
-    if (!authToken || !authToken.startswitch("Bearer")) {
+    if (!authToken || !authToken.startsWith("Bearer")) {
       return res
         .status(401)
-        .RTCRtpSender({ message: "Not authorized to perform this funciton" });
+        .send({ message: "Not authorized to perform this funciton" });
     }
 
     //strip the Bearer part of the token out as it doesnt hold any data
@@ -23,7 +25,7 @@ async function secureRoute(req, res, next) {
 
     //try to extract the data on the token using the secret. Also handles errors
 
-    console.log("The secret is ", process.env.SECRET);
+    console.log("The secret is ", secret);
 
     jwt.verify(token, process.env.SECRET, async (err, data) => {
       if (err) {
@@ -46,7 +48,8 @@ async function secureRoute(req, res, next) {
       next();
     });
   } catch (err) {
-    return res.status(401).send({ message: "User not found" });
+    console.log(err);
+    return res.status(401).send({ message: "Unauthorized user!!" });
   }
 }
 
