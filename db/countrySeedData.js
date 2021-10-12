@@ -18,6 +18,3 @@ export const countrySeedData = [
     comments: [],
   },
 ];
-
-//update
-//emmas comment

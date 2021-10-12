@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 const secret = "travel";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 //make sure that the user making the request has a valid token
@@ -33,7 +34,7 @@ async function secureRoute(req, res, next) {
         return res.status(401).send({ message: "Unauthorized" });
       }
 
-      console.log("RESPONSE FROM JWT IS ", data);
+      console.log("RESPONSE FROM JWT IS >>> ", data);
 
       //find the user by id using the id on the token (set in the user controller)
 
