@@ -52,7 +52,9 @@ async function getUser(req, res, next) {
 
   console.log(`decoded getUser userID is >>`, decoded.userId)
   try {
-    const user = await User.findById(decoded.userId)
+    const user = await User.findById(decoded.userId).populate(
+      'createdCountries'
+    )
 
     if (!user) {
       return res.status(404).send({ message: 'User does not exit' })
