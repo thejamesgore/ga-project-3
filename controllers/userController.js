@@ -48,8 +48,11 @@ async function getAllUsers(_req, res, next) {
 
 async function getUser(req, res, next) {
   const id = req.params.id
+  const decoded = jwt.decode(id)
+
+  console.log(`decoded getUser userID is >>`, decoded.userId)
   try {
-    const user = await User.findById(id)
+    const user = await User.findById(decoded.userId)
 
     if (!user) {
       return res.status(404).send({ message: 'User does not exit' })
