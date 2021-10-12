@@ -1,6 +1,5 @@
 import jwt from 'jsonwebtoken'
 import User from '../models/user.js'
-const secret = 'travel'
 import dotenv from 'dotenv'
 
 dotenv.config()
@@ -26,8 +25,6 @@ async function secureRoute(req, res, next) {
     console.log('🤖 STRIPPED TOKEN' + ' ' + token)
 
     //try to extract the data on the token using the secret. Also handles errors
-
-    console.log('The secret is ', secret)
 
     jwt.verify(token, process.env.SECRET, async (err, data) => {
       if (err) {
