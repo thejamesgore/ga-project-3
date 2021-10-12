@@ -36,7 +36,8 @@ Router.route('/cities/:id').delete(secureRoute, citiesController.deleteCity)
 Router.route('/register').post(userController.registerUser)
 Router.route('/login').post(userController.loginUser)
 
-Router.route('/user/:id').get(userController.returnUsername)
+Router.route('/user').get(userController.getAllUsers)
+Router.route('/user/:id').get(userController.getUser)
 
 export default Router
 //update

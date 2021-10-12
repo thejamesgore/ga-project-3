@@ -35,13 +35,29 @@ async function loginUser(req, res, next) {
   }
 }
 
-//return username
+//Get Users
+async function getAllUsers(_req, res, next) {
+  try {
+    const users = await User.find()
 
-async function returnUsername(req, res, next) {
-  try{
-
+    return res.status(200).json(users)
   } catch (err) {
-  next(err)
+    next(err)
+  }
 }
 
-export default { registerUser, loginUser, returnUsername, }
+async function getUser(req, res, next) {
+  const id = req.params.id
+  try {
+    const user = await User.findById(id)
+
+    if (!user) {
+      return res.status(404).send({ message: 'User does not exit' })
+    }
+    return res.status(200).json(user)
+  } catch (err) {
+    next(err)
+  }
+}
+
+export default { registerUser, loginUser, getUser, getAllUsers }
