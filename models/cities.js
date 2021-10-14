@@ -2,7 +2,7 @@
 // import mongooseUniqueValidator from "mongoose-Unique-Validator";
 
 // const citiesSchema = new mongoose.Schema({
-//   name: { type: String, required: true },
+//   name: { type: String },
 // });
 
 // citiesSchema.plugin(mongooseUniqueValidator);
