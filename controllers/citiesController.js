@@ -10,7 +10,7 @@ async function createCity(req, res, next) {
       return res.status(404).send({ message: "Country does not exist" });
     }
 
-    const newCity = await {
+    const newCity = {
       ...req.body,
     };
 
