@@ -18,12 +18,5 @@ export const placesSeedData = [
     comments: [],
   },
 ];
-<<<<<<< HEAD
 
 //update
-=======
-
-//update
-
-
->>>>>>> 686e0b6980cb9c6c9232f56b4ed697273673ab08
