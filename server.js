@@ -20,7 +20,9 @@ async function startServer() {
   try {
     await connectDb();
     console.log("🤖 Mongoose is connected");
-    app.listen(process.env.PORT, () => console.log(`🤖 Listening on Port: ${process.env.PORT}`));
+    app.listen(process.env.PORT, () =>
+      console.log(`🤖 Listening on Port: ${process.env.PORT}`)
+    );
   } catch (err) {
     console.log("🤖 Oh no something went wrong", err);
   }
@@ -29,4 +31,5 @@ async function startServer() {
 startServer();
 
 //update
-//this is olly change
+
+//ollys updated comments
