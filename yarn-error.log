@@ -1,14 +1,48 @@
 Arguments: 
+<<<<<<< HEAD
   /usr/local/Cellar/node/16.6.2/bin/node /usr/local/Cellar/yarn/1.22.11/libexec/bin/yarn.js add jasonwebtoken
+=======
+
+  /usr/local/Cellar/node/16.6.2/bin/node /usr/local/Cellar/yarn/1.22.11/libexec/bin/yarn.js add mongoose-Unique-Validator
 
 PATH: 
   /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+
+  /Users/jamesgore/.nvm/versions/node/v16.6.1/bin/node /Users/jamesgore/.nvm/versions/node/v16.6.1/bin/yarn start:server
+>>>>>>> Master
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin
+
 
 Yarn version: 
   1.22.11
 
 Node version: 
+<<<<<<< HEAD
   16.6.2
+=======
+
+  16.6.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/mongoose-Unique-Validator: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:66992:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:140763:22)
+      at Request.emit (node:events:394:28)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:141735:10)
+      at Request.emit (node:events:394:28)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.22.11/libexec/lib/cli.js:141657:12)
+      at Object.onceWrapper (node:events:513:28)
+      at IncomingMessage.emit (node:events:406:35)
+      at endReadableNT (node:internal/streams/readable:1331:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+  16.6.1
+>>>>>>> Master
 
 Platform: 
   darwin x64
@@ -26,6 +60,7 @@ Trace:
       at endReadableNT (node:internal/streams/readable:1331:12)
       at processTicksAndRejections (node:internal/process/task_queues:83:21)
 
+
 npm manifest: 
   {
     "name": "ga-project-3",
@@ -33,9 +68,18 @@ npm manifest:
     "description": "travel app",
     "main": "server.js",
     "scripts": {
+<<<<<<< HEAD
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "node server.js",
       "seed": "node db/seed.js"
+=======
+
+      "test": "echo \"Error: no test specified\" && exit 1"
+
+      "start:server": "npx nodemon server.js",
+      "seed": "node db/seed.js",
+
+>>>>>>> Master
     },
     "repository": {
       "type": "git",
