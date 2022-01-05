@@ -1,5 +1,5 @@
-import mongoose from "mongoose";
-import mongooseUniqueValidator from "mongoose-Unique-Validator";
+import mongoose from 'mongoose'
+import mongooseUniqueValidator from 'mongoose-unique-validator'
 
 const countriesSchema = new mongoose.Schema(
   {
@@ -11,14 +11,14 @@ const countriesSchema = new mongoose.Schema(
     rating: { type: Number, min: 1, max: 5 },
     createdBy: {
       type: mongoose.Schema.ObjectId,
-      ref: "user",
+      ref: 'user',
     },
   },
   { timestamp: true }
-);
+)
 
-countriesSchema.plugin(mongooseUniqueValidator);
+countriesSchema.plugin(mongooseUniqueValidator)
 
-const Country = mongoose.model("Country", countriesSchema);
+const Country = mongoose.model('Country', countriesSchema)
 
-export default Country;
+export default Country
