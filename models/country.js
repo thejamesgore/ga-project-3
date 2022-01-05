@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import mongooseUniqueValidator from "mongoose-Unique-Validator";
+import mongooseUniqueValidator from "mongoose-unique-validator";
 
 const countriesSchema = new mongoose.Schema(
   {
